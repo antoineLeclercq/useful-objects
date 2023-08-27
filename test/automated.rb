@@ -1,6 +1,6 @@
 require_relative 'test_init'
 
-TestBench::Runner.(
-  'automated/**/*.rb',
-  exclude_pattern: %r{\/_|(_init\.rb|_tests\.rb)\z}
-) or exit 1
+TestBench::Run.(
+  'test/automated',
+  exclude: ['_*.rb', '*_init.rb', '*_tests.rb']
+) or exit(false)
